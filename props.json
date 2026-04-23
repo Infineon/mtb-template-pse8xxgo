@@ -2,7 +2,7 @@
     "core": {
         "id": "c3e84c3a-97b5-522a-b9d0-a1cfb7c49a23",
         "name": "mtb-template-pse8xxgo",
-        "version": "1.2.0.1006"
+        "version": "1.3.0.1813"
     },
     "opt": {
         "props": {
@@ -53,7 +53,8 @@
                 "pse8xxgo_dependencies": [
                     "deps/core-lib.mtbx",
                     "deps/core-make.mtbx",
-                    "deps/mtb-dsl-pse8xxgo.mtbx"
+                    "deps/mtb-dsl-pse8xxgo.mtbx",
+                    "deps/se-rt-services-utils.mtbx"
                 ]
             },
             "component_sets": {
@@ -87,6 +88,22 @@
                 ]
             },
             "define_sets": {
+                "bsp_config_defines": [
+                    {
+                        "description": "Call the function cybsp_post_cfg_init after init_cycfg_all to perform custom initialization steps",
+                        "display": "Custom step after configurator init",
+                        "options": [
+                            {
+                                "default": false,
+                                "define": "CYBSP_POST_CFG_INIT",
+                                "display": "Enabled",
+                                "value": ""
+                            }
+                        ],
+                        "required": false,
+                        "type": "choice"
+                    }
+                ],
                 "connectivity_defines": [
                     {
                         "description": "Option to set the GPIO drive mode for the WL_REG_ON output.",
@@ -155,22 +172,6 @@
                                 "value": ""
                             }
                         ],
-                        "type": "choice"
-                    }
-                ],
-                "bsp_config_defines": [
-                    {
-                        "description": "Call the function cybsp_post_cfg_init after init_cycfg_all to perform custom initialization steps",
-                        "display": "Custom step after configurator init",
-                        "options": [
-                            {
-                                "default": false,
-                                "define": "CYBSP_POST_CFG_INIT",
-                                "display": "Enabled",
-                                "value": ""
-                            }
-                        ],
-                        "required": false,
                         "type": "choice"
                     }
                 ]
