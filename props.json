@@ -2,7 +2,7 @@
     "core": {
         "id": "c3e84c3a-97b5-522a-b9d0-a1cfb7c49a23",
         "name": "mtb-template-pse8xxgo",
-        "version": "1.3.0.1813"
+        "version": "1.4.0.2539"
     },
     "opt": {
         "props": {
@@ -101,6 +101,20 @@
                             }
                         ],
                         "required": false,
+                        "type": "choice"
+                    },
+                    {
+                        "description": "MCUboot header size used for image signing and flash layout",
+                        "display": "MCUboot Header Size",
+                        "options": [
+                            {
+                                "default": true,
+                                "define": "CYBSP_MCUBOOT_HEADER_SIZE=0x400",
+                                "display": "0x400",
+                                "value": ""
+                            }
+                        ],
+                        "required": true,
                         "type": "choice"
                     }
                 ],
